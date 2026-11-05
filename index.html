@@ -410,8 +410,14 @@ footer{background:var(--marine)}
 .urgent .aid{font-size:calc(14px*var(--scale));color:var(--ink6);font-weight:600;border-inline-start:var(--bw) solid var(--border);padding-inline-start:16px}
 @media (max-width:760px){.urgent{grid-template-columns:1fr}.urgent .aid{border:0;padding:0;border-top:var(--bw) solid var(--border);padding-top:8px}}
 .assure{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 28px}
-.assure li{font-size:calc(14.5px*var(--scale));line-height:1.45;color:var(--ink6);border-top:2px solid var(--marine);padding-top:10px}
+.assure li{font-size:calc(14.5px*var(--scale));line-height:1.45;color:var(--ink6);border-top:3px solid var(--marine);padding-top:10px}
+.assure li:nth-child(1){border-top-color:var(--orange)}
+.assure li:nth-child(2){border-top-color:var(--violet)}
+.assure li:nth-child(3){border-top-color:var(--sarcelle)}
 :root[data-contrast="high"] .assure li{border-top-color:var(--ink)}
+/* section separators */
+.band+.band:not(.dark){border-top:1px solid var(--border)}
+.band.dark+.band:not(.dark){border-top:none}
 .assure b{display:block;color:var(--ink);font-size:calc(15px*var(--scale));margin-bottom:2px}
 .hero-ctas{margin:26px 0 0}
 .proofs{display:none}
@@ -508,7 +514,7 @@ details[open] p{animation:fadeUp .3s ease forwards}
 <div class="band hero-band"><div class="wrap">
  <div class="hero3">
   <div class="hero-main">
-   <p class="eyebrow reveal" data-i="heroEyebrow">Cabinet d’avocate en immigration · Barreau du Québec</p>
+   <p class="eyebrow reveal" data-i="heroEyebrow" style="color:var(--violet-ink)">Cabinet d’avocate en immigration · Barreau du Québec</p>
    <h1 data-i="h1" class="reveal">Votre dossier a été refusé ? Vous avez peut-être <span class="h1-accent reveal">un recours</span>.</h1>
    <p class="lead reveal d1" data-i="lead">Me Amélie Brideau, avocate en droit de l’immigration. Contrôle judiciaire en Cour fédérale, parrainage, permis d’études et de travail, asile. Consultation gratuite de 15 minutes — en ligne, en sept langues.</p>
    <div class="ctas hero-ctas reveal d2">
@@ -569,7 +575,8 @@ details[open] p{animation:fadeUp .3s ease forwards}
 </div></div>
 
 <div class="band alt" id="emp"><div class="wrap">
- <h2 data-i="empTitle" class="reveal">Employeurs hors Québec : recruter un francophone sans EIMT</h2>
+ <p class="eyebrow reveal" style="color:var(--sarcelle-ink)">Employeurs</p>
+ <h2 data-i="empTitle" class="reveal">Recruter un francophone sans EIMT</h2>
  <p class="lead" data-i="empLead">En Ontario, au Nouveau-Brunswick ou au Manitoba, la catégorie C16 (mobilité francophone) permet un permis de travail sans étude d’impact sur le marché du travail (EIMT). La désignation d’employeur dans une communauté francophone permet de recruter à répétition. Ces programmes excluent le Québec.</p>
  <div class="cols">
   <div class="card emp"><h3 data-i="emp1t">Mobilité francophone (C16)</h3><p data-i="emp1b">Permis de travail sans EIMT pour un candidat francophone hors Québec. Ni frais d’EIMT, ni semaines d’affichage.</p></div>
@@ -580,7 +587,8 @@ details[open] p{animation:fadeUp .3s ease forwards}
 </div></div>
 
 <div class="band" id="prep"><div class="wrap">
- <h2 data-i="prepTitle" class="reveal">Préparer sa demande d’immigration : ce qu’il faut réunir avant de déposer</h2>
+ <p class="eyebrow reveal" style="color:var(--violet-ink)">Services</p>
+ <h2 data-i="prepTitle" class="reveal">Ce qu’il faut réunir avant de déposer</h2>
  <p class="lead" data-i="prepLead">La plupart des refus d’IRCC ne tiennent pas à la personne. Ils tiennent à un dossier incomplet sur un point précis. Choisissez votre situation pour voir les documents critiques et les erreurs qui causent les refus.</p>
  <div class="tool">
   <div class="field"><label for="sit" data-i="qSit">Votre situation</label>
@@ -591,7 +599,8 @@ details[open] p{animation:fadeUp .3s ease forwards}
 </div></div>
 
 <div class="band"><div class="wrap">
- <h2 data-i="honTitle" class="reveal">Ce qu’une avocate en immigration peut faire, et ce qu’elle ne peut pas</h2>
+ <p class="eyebrow reveal" style="color:var(--sarcelle-ink)">Transparence</p>
+ <h2 data-i="honTitle" class="reveal">Ce qui est possible, et ce qui ne l’est pas</h2>
  <p class="lead" data-i="honLead">Une avocate en immigration peut contester un refus devant la Cour fédérale, préparer une demande et reprendre un dossier. Elle ne peut pas promettre une issue, accélérer IRCC, ni prendre un dossier sans recours viable.</p>
  <div class="cols">
   <div class="card can"><h3 data-i="canTitle">Possible</h3><ul><li data-i="can1">Dire si un recours existe, et lequel, avant tout paiement</li><li data-i="can2">Préparer et déposer une demande d’autorisation et de contrôle judiciaire à la Cour fédérale</li><li data-i="can3">Reprendre un dossier préparé ailleurs et dire ce qui cloche</li></ul></div>
@@ -612,6 +621,7 @@ details[open] p{animation:fadeUp .3s ease forwards}
 </div></div>
 
 <div class="band"><div class="wrap">
+ <p class="eyebrow reveal" style="color:var(--violet-ink)">Contrôle judiciaire</p>
  <h2 data-i="processT" class="reveal">Comment fonctionne un contrôle judiciaire en immigration</h2>
  <p class="lead reveal d1" data-i="processB">Après un refus d’IRCC, la Cour fédérale peut réviser la décision. Le processus a des étapes précises et des délais stricts.</p>
  <div class="cols reveal d2" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
@@ -624,6 +634,7 @@ details[open] p{animation:fadeUp .3s ease forwards}
 </div></div>
 
 <div class="band alt" id="hon"><div class="wrap">
+ <p class="eyebrow reveal" style="color:var(--sarcelle-ink)">Honoraires</p>
  <h2 data-i="feeTitle" class="reveal">Honoraires d’avocate en immigration — prix affichés</h2>
  <p class="lead" data-i="feeLead">Consultation initiale de 15 minutes : gratuite. Les honoraires de chaque service sont des prix déterminés, affichés ici, et valides 90 jours conformément aux articles 146 à 148 du Code de déontologie des avocats du Québec.</p>
  <div class="tablewrap"><table>
@@ -639,6 +650,7 @@ details[open] p{animation:fadeUp .3s ease forwards}
 </div></div>
 
 <div class="band" id="blog"><div class="wrap">
+ <p class="eyebrow reveal" style="color:var(--violet-ink)">Cas pratiques</p>
  <h2 data-i="blogTitle" class="reveal">Cas pratiques : des dossiers d’immigration refusés au Canada, et pourquoi</h2>
  <p class="lead" data-i="blogLead">Des cas anonymisés et recomposés à partir de motifs de refus réels d’IRCC — permis d’études refusé pour « double intention », parrainage refusé pour « relation non authentique », lettre d’équité procédurale mal répondue. Pour que vous reconnaissiez votre dossier avant l’agent.</p>
  <div class="posts reveal d1">
@@ -660,6 +672,7 @@ details[open] p{animation:fadeUp .3s ease forwards}
 </div></div>
 
 <div class="band dark" id="book"><div class="wrap">
+ <p class="eyebrow reveal" style="color:var(--orange)">Consultation gratuite</p>
  <h2 data-i="bookTitle">Parlons-en</h2>
  <div class="book" style="color:var(--ink)">
   <span class="freechip" data-i="free15">15 minutes · Gratuit</span>
