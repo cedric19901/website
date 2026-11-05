@@ -612,7 +612,9 @@ body{background:var(--bg);background-image:
 :root[data-theme="dark"] .hero-band{background:linear-gradient(170deg,#0A1B2C 0%,#0E2440 40%,#112F4C 70%,#0E2440 100%)!important}
 
 /* -- nav: gradient + deeper blur -- */
-.nav{background:linear-gradient(180deg,rgba(17,47,76,.96) 0%,rgba(14,36,64,.92) 100%)!important;backdrop-filter:blur(20px)!important;-webkit-backdrop-filter:blur(20px)!important}
+/* nav: transparent glass on mobile, slightly more opaque on desktop */
+.nav{background:rgba(17,47,76,.65)!important;backdrop-filter:blur(24px) saturate(1.4)!important;-webkit-backdrop-filter:blur(24px) saturate(1.4)!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+@media (max-width:900px){.nav{background:rgba(17,47,76,.5)!important}}
 
 /* -- sections: richer gradients -- */
 .band.alt{background:linear-gradient(175deg,#F0F2F5 0%,#E8ECF2 40%,#F4F6F9 100%)!important}
@@ -740,17 +742,20 @@ details[open]{background:linear-gradient(180deg,rgba(255,255,255,.7) 0%,rgba(255
  .brand{order:0}
  .navcta{order:2}
  .tools{order:3}
- .links,.links.open{position:fixed!important;inset:0!important;top:56px!important;z-index:99!important;
-  background:rgba(17,47,76,.97)!important;backdrop-filter:blur(24px)!important;-webkit-backdrop-filter:blur(24px)!important;
-  flex-direction:column!important;flex-wrap:nowrap!important;padding:32px 24px!important;gap:0!important;overflow-y:auto!important;
-  padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))!important}
+ .links,.links.open{position:fixed!important;left:0!important;right:0!important;top:0!important;bottom:0!important;z-index:99!important;
+  background:rgba(17,47,76,.88)!important;backdrop-filter:blur(40px) saturate(1.4)!important;-webkit-backdrop-filter:blur(40px) saturate(1.4)!important;
+  flex-direction:column!important;flex-wrap:nowrap!important;
+  padding:calc(90px + env(safe-area-inset-top,0px)) 28px 28px!important;gap:8px!important;overflow-y:auto!important;
+  padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))!important;
+  align-items:stretch!important;justify-content:flex-start!important}
  .links{display:none!important}
  .links.open{display:flex!important}
- .links a{display:flex!important;font-size:calc(20px*var(--scale))!important;padding:18px 0!important;
-  border-bottom:1px solid rgba(255,255,255,.1);color:#F4F6FC;min-height:56px;
-  font-weight:600;letter-spacing:.01em}
+ .links a{display:flex!important;font-size:calc(22px*var(--scale))!important;padding:20px 16px!important;
+  border-bottom:1px solid rgba(255,255,255,.1);color:#F4F6FC;min-height:60px;
+  font-weight:700;letter-spacing:.01em;border-radius:12px;
+  transition:background .15s ease}
  .links a:last-child{border-bottom:0}
- .links a:hover,.links a:active{background:rgba(255,255,255,.06);border-radius:10px;padding-inline:12px!important}
+ .links a:hover,.links a:active{background:rgba(255,255,255,.1)}
 }
 
 /* more transparency & glass effects */
