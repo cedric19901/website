@@ -1,0 +1,26 @@
+# Immigrer-mieux.ca — robots.txt
+# Accès ouvert aux crawlers de recherche et d'IA
+
+User-agent: *
+Allow: /
+
+# Crawlers IA — accès explicitement autorisé
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://immigrer-mieux.ca/sitemap.xml
